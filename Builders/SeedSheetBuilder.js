@@ -92,13 +92,13 @@ SeedSheet = function () {
         for (i = 1; i <= numberOfGroup; i++) {
             switch (i) {
                 case 1:
-                    var color = 'blue';
+                    var color = 'red';
                     break;
                 case 2:
                     var color = 'black';
                     break;
                 case 3:
-                    var color = 'red';
+                    var color = 'blue';
                     break;
             }
             gSheet.getRange(2, gSheet.getLastColumn() - (4 - i), players.length + 2, 1).setFontColor(color);
@@ -154,7 +154,7 @@ SeedSheet = function () {
 
         var startRow = 2;
 
-        for (i = 1; i <= 3; i++) {
+        for (i = 1; i <= 4; i++) {
 
             //create seed by group
             gSheet.getRange(startRow + 5 * i - 5, 2).setFormula('query(' + g.NamedRange_Update + ',\"select B,C,D,E,F,G,H,I,J,K WHERE A=' + i + ' order by I desc, J desc, K desc, B\",-1)');
